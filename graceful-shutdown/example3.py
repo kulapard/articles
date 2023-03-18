@@ -24,7 +24,6 @@ def shutdown(sig: signal.Signals) -> None:
         task.cancel()
 
     print(f"Cancelled {len(tasks_to_cancel)} out of {len(all_tasks)} tasks")
-    asyncio.run_until_complete(gather(*tasks))
 
 
 def setup_signal_handler() -> None:
