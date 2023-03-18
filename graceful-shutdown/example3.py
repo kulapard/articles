@@ -24,6 +24,7 @@ def shutdown(sig: signal.Signals) -> None:
         task.cancel()
 
     print(f"Cancelled {len(tasks_to_cancel)} out of {len(all_tasks)} tasks")
+    asyncio.run_until_complete(gather(*tasks))
 
 
 def setup_signal_handler() -> None:
@@ -48,7 +49,8 @@ async def main() -> None:
     # setup graceful shutdown
     setup_signal_handler()
 
-    # protect main task from being canceled, otherwise it will cancel all other tasks
+    # protect main task from being canceled,
+    # otherwise it will cancel all other tasks
     protect(asyncio.current_task())
 
     # create 6 tasks, shield only first 3

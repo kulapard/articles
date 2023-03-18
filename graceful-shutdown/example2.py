@@ -24,7 +24,8 @@ async def main() -> None:
     for n in range(6):
         task = asyncio.create_task(worker(n))
         if n < 3:
-            # protect task from being canceled (spoiler: it will be canceled anyway)
+            # protect task from being canceled
+            # (spoiler: it will be canceled anyway)
             task = asyncio.shield(task)
 
         tasks.append(task)
