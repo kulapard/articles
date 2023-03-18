@@ -1,6 +1,6 @@
 """
 Example 2:
-Demonstrating how asyncio.shield() does not prevent
+Demonstrates how asyncio.shield() does not prevent
 tasks from being canceled during a shutdown.
 """
 

@@ -1,6 +1,6 @@
 """
 Example 1:
-Demonstrating what's happening with tasks when an app is interrupted.
+Demonstrates what's happening with tasks when an app is interrupted.
 """
 
 import asyncio
