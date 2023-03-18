@@ -61,7 +61,7 @@ async def main() -> None:
         tasks.append(task)
 
     # wait for all tasks to finish
-    await asyncio.gather(*tasks, return_exceptions=True)
+    await asyncio.gather(*tasks)
 
 
 if __name__ == '__main__':
