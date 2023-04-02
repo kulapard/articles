@@ -51,7 +51,6 @@ def generate_summary(text: str) -> str:
             {"role": "user", "content": text}
         ],
         temperature=0.2,
-        top_p=0,
         n=1,
         max_tokens=200,
         presence_penalty=0,
@@ -74,7 +73,8 @@ def summarize_youtube_video(video_url: str) -> str:
 
     # If no transcript is found, return an error message
     if not transcript:
-        return f"No English transcript found for this video: {video_url}"
+        return f"No English transcript found " \
+               f"for this video: {video_url}"
 
     # Generate the summary
     summary = generate_summary(transcript)
